@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SlothX Roblox Clothing Previewer</title>
+  <link rel="stylesheet" href="public/css/style.css" />
+  <title>SlothX Outfit Viewer — Private, Browser-Based Roblox Clothing Previewer</title>
+  <link rel="icon" type="image/png" href="public/assets/SlothX Outfit Viewer.ico">
+
+</head>
+
+<body>
+  <header class="topbar">
+    <div class="brandwrap">
+      <img class="brand" src="public/assets/SlothX Outfit Viewer.png" alt="SlothX Outfit Viewer" />
+      <span class="title">SlothX Outfit Viewer</span>
+    </div>
+
+    <div class="toolbar">
+      <label class="btn file">
+        <input id="shirtInput" type="file" accept="image/png" hidden />
+        Shirt PNG
+      </label>
+      <label class="btn file">
+        <input id="pantsInput" type="file" accept="image/png" hidden />
+        Pants PNG
+      </label>
+      <button id="clearShirt" class="btn ghost">Clear Shirt</button>
+      <button id="clearPants" class="btn ghost">Clear Pants</button>
+      <div class="spacer"></div>
+      <button id="resetView" class="btn">Reset View</button>
+      <button id="screenshot" class="btn outline">Save Screenshot</button>
+      <button id="toggleSidebar" class="btn ghost" aria-pressed="false">Controls ▸</button>
+    </div>
+  </header>
+
+  <main class="workspace">
+    <section class="stage">
+      <div id="canvasMount" class="canvas"></div>
+      <div class="hud">Drag to rotate • Scroll to zoom • Right-drag to pan</div>
+    </section>
+
+    <aside class="sidebar" id="sidebar">
+      <div class="card">
+        <div class="row">
+          <label class="checkbox"><input id="showGrid" type="checkbox" checked /><span>Show grid</span></label>
+          <label class="checkbox"><input id="lockCamera" type="checkbox" /><span>Lock camera</span></label>
+        </div>
+
+        <div class="group">
+          <div class="row slider">
+            <span>Ambient</span>
+            <input id="ambient" type="range" min="0" max="2" step="0.01" value="0.6" />
+            <span id="ambientVal" class="mono">0.60</span>
+          </div>
+          <div class="row slider">
+            <span>Sunlight</span>
+            <input id="sun" type="range" min="0" max="4" step="0.01" value="1.2" />
+            <span id="sunVal" class="mono">1.20</span>
+          </div>
+        </div>
+      </div>
+    </aside>
+  </main>
+  <script type="importmap">
+    {
+  "imports": {
+    "three": "https://unpkg.com/three@0.160.0/build/three.module.js"
+  }
+}
+</script>
+  <script type="module" src="public/js/app.js"></script>
+</body>
+
+</html>
